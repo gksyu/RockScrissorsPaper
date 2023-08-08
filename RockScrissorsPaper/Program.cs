@@ -5,7 +5,7 @@ namespace RockScrissorsPaper
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) 
         {
             string[] moves = args;
             Rules.Set(moves);
@@ -23,11 +23,10 @@ namespace RockScrissorsPaper
 
             Player user = new Player();
             Player pc = new Player();
-            int pcMove, userMove, MoveCount = 0;
+            int pcMove, userMove;
 
             while (true)
             {
-                MoveCount++;
                 string key = Key.RandKeyGenerator();
                 pcMove = pc.MoveGenerator(moves.Length);     pc.Set(pcMove);
                 string hmac = key + pcMove;
@@ -38,7 +37,7 @@ namespace RockScrissorsPaper
                 if (userMove == 0) break;
                 Console.WriteLine("User move: " + moves[userMove-1]);
                 Console.WriteLine("PC move: " + moves[pcMove]);
-                Console.WriteLine("You " + HelpTable.TableResult(userMove-1, pcMove, MoveCount));
+                Console.WriteLine("You " + HelpTable.TableResult(userMove - 1, pcMove, pc.Get().Count));
                 Console.WriteLine("HMAC key: " + key);
                 Console.WriteLine("--------------------------------------------");
             }

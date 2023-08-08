@@ -18,11 +18,11 @@
             int halfLength = MovesLength / 2;
 
             if (userMove == computerMove)
-                return "Draw";
-            else if ((computerMove - userMove + MovesLength) % MovesLength >= halfLength)
-                return "Computer";
+            { return "Draw"; }
+            else if ((computerMove - userMove + MovesLength) % MovesLength > halfLength)
+            { return "Computer"; }
             else
-                return "User";
+            { return "User"; }
         }
     }
 }

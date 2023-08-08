@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace RockScrissorsPaper
 {
     class Player
     {
-         static public int[] moves = Array.Empty<int>();
+        List<int> moves = new List<int>();
 
         public int MoveGenerator(int input)
         {
@@ -14,13 +15,13 @@ namespace RockScrissorsPaper
             return randomIndex;
         }
 
-        public int[] Get()
+        public List<int> Get()
         {
             return moves;
         }
         public void Set(int value)
         {
-            moves.Append(value);
+            moves.Add(value);
         }
 }
 }
